@@ -1,0 +1,15 @@
+.env
+path
+__pycache__
+app.egg-info
+*.pyc
+.mypy_cache
+.coverage
+htmlcov
+.cache
+.venv
+.DS_Store
+venv
+.path
+**/__pycache__/
+*/__pycache__/*
