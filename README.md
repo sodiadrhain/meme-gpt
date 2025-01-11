@@ -1,5 +1,5 @@
 # MEME GPT
-A simple web3 tool fioir trading activities.
+A simple web3 tool for trading activities.
 
 ### Setup
 
@@ -14,32 +14,32 @@ Clone the [repository](https://github.com/sodiadrhain/meme-gpt.git) and proceed 
 Install all requirements and dependancies
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Then run
 
 ```
-python main.py
+python3 main.py
 ```
 
 ### Running in a venv
 
 ```
-python -m venv venv
+python3 -m venv venv
 ```
 ```
 source venv/bin/activate
 ```
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Then run
 
 ```
-python main.py
+python3 main.py
 ```
 
-Note: if you have `python3` and `pip3` command installed use `python3` instead of `python` and `pip`
+Note: if you have `python3` installed use `python3` and `pip3` instead of `python` and `pip`
 
