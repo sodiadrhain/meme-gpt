@@ -1,18 +1,17 @@
 import requests
-import config.env
+from config.env import TATUM_API_KEY
 
 # HEADERS
 TATUM_HEADERS = {
     "accept": "application/json",
     "content-type": "application/json",
-    "x-api-key": config.env.TATUM_API_KEY
+    "x-api-key": TATUM_API_KEY
 }
 
 TATUM_API_URL = "https://api.tatum.io/v3"
 
 # Generate Solana wallet
 # https://docs.tatum.io/reference/solanageneratewallet
-
 def generate_solana_wallet():
     try:
         response = requests.get(TATUM_API_URL + "/solana/wallet", headers=TATUM_HEADERS)
@@ -20,7 +19,7 @@ def generate_solana_wallet():
         if response.status_code == 200:
             return {"status": "success", "data": response.json(), "message": "Solana wallet generated successfully"}
         else:
-            return {"status": "failed", "data": response.json(), "message": "Solana wallet generated failed with" + str(response.status_code) }
+            return {"status": "failed", "data": response.json(), "message": "Solana wallet generated failed with " + str(response.status_code) + " error" }
     except requests.exceptions.RequestException as e:
         return {"status": "error", "data": str(e), "message": "An error occured on generating solana wallet" }
     
@@ -34,7 +33,7 @@ def get_solana_account_balance(address: str):
         if response.status_code == 200:
             return {"status": "success", "data": response.json(), "message": "Solana account balance fetched successfully"}
         else:
-            return {"status": "failed", "data": response.json(), "message": "Failed to fetch solana account balance with error" + str(response.status_code) }
+            return {"status": "failed", "data": response.json(), "message": "Failed to fetch solana account balance with " + str(response.status_code) + " error" }
     except requests.exceptions.RequestException as e:
         return {"status": "error", "data": str(e), "message": "An error occured on fetching solana account balance" }
     
@@ -55,6 +54,6 @@ def send_sol_from_acount(from_address: str, to_address: str, amount: float, from
         if response.status_code == 200:
             return {"status": "success", "data": response.json(), "message": "Sent sol to account successfully"}
         else:
-            return {"status": "failed", "data": response.json(), "message": "Failed to send sol to accounte with error" + str(response.status_code) }
+            return {"status": "failed", "data": response.json(), "message": "Failed to send sol to accounte with " + str(response.status_code) + " error" }
     except requests.exceptions.RequestException as e:
         return {"status": "error", "data": str(e), "message": "An error occured on sending sol to account" }

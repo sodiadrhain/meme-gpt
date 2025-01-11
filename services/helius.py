@@ -1,8 +1,7 @@
 import requests
 import uuid
-import config.env
+from config.env import HELIUS_API_KEY
 
-HELIUS_API_KEY = config.env.HELIUS_API_KEY
 HELIUS_RPC_URL = "https://mainnet.helius-rpc.com/"
 
 def generate_request_id():

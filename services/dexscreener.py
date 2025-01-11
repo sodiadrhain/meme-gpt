@@ -16,6 +16,6 @@ def get_token_asset(token: str):
         if response.status_code == 200:
             return {"status": "success", "data": response.json(), "message": "Dex token asset fetched successfully"}
         else:
-            return {"status": "failed", "data": response.json(), "message": "Dex token asset fetch failed with" + str(response.status_code) }
+            return {"status": "failed", "data": response.json(), "message": "Dex token asset fetch failed with" + str(response.status_code) + " error" }
     except requests.exceptions.RequestException as e:
         return {"status": "error", "data": str(e), "message": "An error occured on dexscreener get_token_asset" }
