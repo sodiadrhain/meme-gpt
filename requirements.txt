@@ -5,3 +5,4 @@ python-telegram-bot
 python-dotenv
 chatterbot==1.0.4
 pytz
+pymysql

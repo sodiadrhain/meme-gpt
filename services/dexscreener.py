@@ -1,4 +1,7 @@
 import requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 DEX_API_URL = "https://api.dexscreener.com/latest/dex/"
 
@@ -8,6 +11,7 @@ DEX_HEADERS = {
 }
 
 def get_token_asset(token: str):
+    logger.info("get_token_asset")
     try: 
         response = requests.get(
             DEX_API_URL+"tokens/"+token,

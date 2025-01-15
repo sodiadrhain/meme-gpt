@@ -30,7 +30,7 @@ def get_recent_search(params: object):
 
 # Full-archive search
 # The full-archive search endpoint returns the complete history of public Tweets matching a search query; since the first Tweet was created March 26, 2006.
-# https://developer.x.com/en/docs/x-api/tweets/search/api-reference/get-tweets-search-recent
+# https://developer.x.com/en/docs/x-api/tweets/search/api-reference/get-tweets-search-all
 def get_search_history(params: object):
     try:
         response = requests.get(TWITTER_API_V2_URL + "/tweets/search/all", headers=TWITTER_HEADERS, params=params)
